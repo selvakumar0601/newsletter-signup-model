@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #e0e7ff, #f5d0fe);
+    color: #1e293b;
+}
+
+.container {
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    background: white;
+    padding: 45px 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.newsletter-icon,
+.modal-icon {
+    font-size: 55px;
+    margin-bottom: 18px;
+}
+
+.container h1 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #312e81;
+}
+
+.container p {
+    color: #64748b;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s ease;
+}
+
+.subscribe-btn,
+.submit-btn {
+    background: #4f46e5;
+    color: white;
+    padding: 14px 25px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.subscribe-btn:hover,
+.submit-btn:hover {
+    background: #3730a3;
+    transform: translateY(-2px);
+}
+
+/* Modal Overlay */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 1000;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal Box */
+
+.modal {
+    background: white;
+    width: 100%;
+    max-width: 430px;
+    padding: 35px 30px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+
+    transform: translateY(25px) scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal {
+    transform: translateY(0) scale(1);
+}
+
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 30px;
+    color: #64748b;
+    background: transparent;
+}
+
+.close-btn:hover {
+    color: #ef4444;
+}
+
+.modal h2 {
+    color: #312e81;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.modal > p {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+#newsletterForm {
+    text-align: left;
+}
+
+#newsletterForm label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+#newsletterForm input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+#newsletterForm input:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+}
+
+.submit-btn {
+    width: 100%;
+}
+
+.message {
+    font-size: 13px;
+    text-align: center;
+    margin-top: 12px;
+    line-height: 1.5;
+}
+
+.message.success {
+    color: #15803d;
+}
+
+.message.error {
+    color: #dc2626;
+}
+
+.modal small {
+    display: block;
+    color: #94a3b8;
+    font-size: 11px;
+    margin-top: 20px;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 480px) {
+    .container {
+        padding: 35px 20px;
+    }
+
+    .container h1 {
+        font-size: 25px;
+    }
+
+    .modal {
+        padding: 35px 22px;
+    }
+
+    .modal h2 {
+        font-size: 21px;
+    }
+}
